@@ -23,6 +23,53 @@ body {
 }
 
 // ==========================
+// STYLES POUR LA PAGE ACCEUIL
+// ==========================
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.image-center {
+  max-width: 75%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.start-button {
+  padding: 20px 40px;
+  background-color: $rose-pimpant;
+  color: white;
+  font-size: $font-size-large;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  animation: bounce 2s infinite; /* Animation du bouton */
+  
+  &:hover {
+    background-color: $rose-clair;
+  }
+}
+
+/* Animation du bouton "Commencer" */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// ==========================
 // STYLES POUR LA PAGE THEMATIQUE
 // ==========================
 .thematique-container {
