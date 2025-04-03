@@ -1,0 +1,153 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 20px;
+  padding: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center; /* Centrage vertical */
+  align-items: center; /* Centrage horizontal */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.image-center {
+  max-width: 75%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.start-button {
+  padding: 20px 40px;
+  background-color: #FF007F;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  animation: bounce 2s infinite; /* Animation du bouton */
+}
+.start-button:hover {
+  background-color: #ff3385;
+}
+
+/* Animation du bouton "Commencer" */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.thematique-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrage vertical des boutons */
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 400px;
+  margin-bottom: 40px;
+  cursor: pointer; /* Ajout du curseur pour indiquer que c'est cliquable */
+  top: 20px;
+  left: 50%; /* Centrer horizontalement */
+}
+
+.themes-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Augmenter l'espace vertical entre les boutons */
+  width: 100%;
+  position: relative;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center; /* Aligner l'icône et le texte verticalement */
+  justify-content: center;
+  padding: 20px 40px; /* Augmenter le padding vertical pour rendre les boutons plus "fat" */
+  background-color: #FF007F;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: calc(50% - 20px); /* Largeur de 50% pour 2 boutons par ligne */
+  box-sizing: border-box;
+  position: relative;
+  /* Positionner l'icône à gauche avec un écart de 10px du bord du bouton */
+  /* Centrer le texte dans le bouton, même avec l'icône à gauche */
+  /* Positionnement du dic thème-score */
+}
+.theme-button .icon-container {
+  position: absolute; /* Positionner l'icône absolument par rapport au bouton */
+  left: 10px; /* 10px d'écart à gauche du bouton */
+  top: 50%; /* Centrer verticalement l'icône */
+  transform: translateY(-50%); /* Correction pour centrer parfaitement l'icône */
+}
+.theme-button span {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.theme-button:hover {
+  background-color: #ff3385;
+}
+.theme-button.done {
+  background-color: #555 !important;
+  opacity: 0.6;
+  pointer-events: none; /* Désactive le bouton */
+}
+.theme-button .theme-score {
+  position: absolute;
+  right: 5px; /* À quelques pixels du bord du bouton */
+  top: 50%;
+  transform: translateY(-50%); /* Centrer verticalement */
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Légère opacité pour contraste */
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .themes-buttons-container {
+    gap: 15px;
+  }
+  .theme-button {
+    padding: 15px 30px; /* Augmenter légèrement l'espace pour tablette */
+    font-size: 16px;
+    width: calc(50% - 10px); /* Les boutons occupent 50% de la largeur sur tablette */
+  }
+}
+@media (max-width: 480px) {
+  .themes-buttons-container {
+    gap: 10px;
+  }
+  .theme-button {
+    padding: 15px 25px; /* Augmenter le padding pour les petits écrans */
+    font-size: 14px;
+    width: 100%; /* Les boutons occupent toute la largeur sur mobile */
+  }
+}/*# sourceMappingURL=main.css.map */

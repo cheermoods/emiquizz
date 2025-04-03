@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/qcm.css">
+  <script src="../js/data.js"></script>
+  <script defer src="../js/qcm.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="thematique.html">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+    </a>
+  </div>
+
+  <div class="qcm-container">
+    <h1 class="qcm-title">Trouves ton futur mari</h1>
+    <div id="image-container" class="qcm-image-grid"></div>
+  </div>
+
+  <div id="overlay" class="qcm-hidden qcm-overlay">
+    <div class="qcm-overlay-content">
+      <button id="close-overlay" class="close-button">X</button>
+      <h2>Bien joué !</h2>
+      <img id="overlay-image" src="" alt="Bonne réponse">
+      <a href="thematique.html" class="return-button">Choisir un autre thème</a>
+    </div>
+  </div>
+</body>
+
+</html>

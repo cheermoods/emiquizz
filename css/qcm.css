@@ -1,0 +1,269 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 20px;
+  padding: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center; /* Centrage vertical */
+  align-items: center; /* Centrage horizontal */
+}
+
+.thematique-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrage vertical des boutons */
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 400px;
+  margin-bottom: 40px;
+  cursor: pointer; /* Ajout du curseur pour indiquer que c'est cliquable */
+  top: 20px;
+  left: 50%; /* Centrer horizontalement */
+}
+
+.themes-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Augmenter l'espace vertical entre les boutons */
+  width: 100%;
+  position: relative;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center; /* Aligner l'icône et le texte verticalement */
+  justify-content: center;
+  padding: 20px 40px; /* Augmenter le padding vertical pour rendre les boutons plus "fat" */
+  background-color: #FF007F;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: calc(50% - 20px); /* Largeur de 50% pour 2 boutons par ligne */
+  box-sizing: border-box;
+  position: relative;
+  /* Positionner l'icône à gauche avec un écart de 10px du bord du bouton */
+  /* Centrer le texte dans le bouton, même avec l'icône à gauche */
+}
+.theme-button .icon-container {
+  position: absolute; /* Positionner l'icône absolument par rapport au bouton */
+  left: 10px; /* 10px d'écart à gauche du bouton */
+  top: 50%; /* Centrer verticalement l'icône */
+  transform: translateY(-50%); /* Correction pour centrer parfaitement l'icône */
+}
+.theme-button span {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.theme-button:hover {
+  background-color: #ff3385;
+}
+.theme-button.done {
+  background-color: #555 !important;
+  opacity: 0.6;
+  pointer-events: none; /* Désactive le bouton */
+}
+
+@media (max-width: 768px) {
+  .themes-buttons-container {
+    gap: 15px;
+  }
+  .theme-button {
+    padding: 15px 30px; /* Augmenter légèrement l'espace pour tablette */
+    font-size: 16px;
+    width: calc(50% - 10px); /* Les boutons occupent 50% de la largeur sur tablette */
+  }
+}
+@media (max-width: 480px) {
+  .themes-buttons-container {
+    gap: 10px;
+  }
+  .theme-button {
+    padding: 15px 25px; /* Augmenter le padding pour les petits écrans */
+    font-size: 14px;
+    width: 100%; /* Les boutons occupent toute la largeur sur mobile */
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Style pour la barre de navigation */
+.navbar {
+  display: block;
+  margin: 40px 0 0 0;
+}
+
+.logo {
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+/* Conteneur principal du QCM */
+.qcm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+.qcm-title {
+  font-size: 32px;
+  color: white;
+  margin: 40px 0;
+}
+
+/* Conteneur des images en grid : Deux images par ligne */
+.qcm-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* Style des images dans le QCM */
+.qcm-image {
+  width: 600px;
+  height: 400px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Légère mise à l'échelle des images au survol */
+.qcm-image:hover {
+  transform: scale(1.2);
+}
+
+.qcm-image.incorrect {
+  opacity: 0.5;
+}
+
+/* Overlay pour la bonne réponse */
+.qcm-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1000;
+}
+
+.qcm-overlay-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Bouton X noir pour fermer l'overlay */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.qcm-overlay-content img {
+  max-width: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: 20px 0;
+}
+
+.qcm-overlay-content h2 {
+  font-size: 24px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.qcm-overlay-content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.qcm-overlay-content a:hover {
+  background-color: #0056b3;
+}
+
+.qcm-hidden {
+  display: none;
+}
+
+/* Style pour le message d'erreur */
+.qcm-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* Positionner theme-score à droite du bouton thématique */
+.theme-button .theme-score {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}/*# sourceMappingURL=qcm.css.map */
