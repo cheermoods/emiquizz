@@ -13,6 +13,47 @@ body {
   align-items: center; /* Centrage horizontal */
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.image-center {
+  max-width: 75%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.start-button {
+  padding: 20px 40px;
+  background-color: #FF007F;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  animation: bounce 2s infinite; /* Animation du bouton */
+}
+.start-button:hover {
+  background-color: #ff3385;
+}
+
+/* Animation du bouton "Commencer" */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .thematique-container {
   display: flex;
   flex-direction: column;
@@ -24,9 +65,8 @@ body {
 }
 
 .logo {
-  width: 400px;
-  margin-bottom: 40px;
-  cursor: pointer; /* Ajout du curseur pour indiquer que c'est cliquable */
+  width: 300px;
+  height: auto;
 }
 
 .themes-buttons-container {
@@ -113,13 +153,14 @@ body {
 .navbar {
   display: block;
   margin: 40px 0 0 0;
+  padding-top: 60px;
 }
 
 .logo {
   max-width: 300px;
   height: auto;
-  cursor: pointer;
-  margin: 0 auto;
+  margin: 20px auto 0 auto; /* Ajoute un espace en haut */
+  display: block;
 }
 
 /* Conteneur principal du QCM */
