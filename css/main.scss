@@ -133,7 +133,6 @@ body {
   &.done {
     background-color: #555 !important;
     opacity: 0.6;
-    pointer-events: none; /* Désactive le bouton */
   }
 
   /* Positionnement du dic thème-score */

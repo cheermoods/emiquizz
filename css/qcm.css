@@ -13,6 +13,47 @@ body {
   align-items: center; /* Centrage horizontal */
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.image-center {
+  max-width: 75%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.start-button {
+  padding: 20px 40px;
+  background-color: #FF007F;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  animation: bounce 2s infinite; /* Animation du bouton */
+}
+.start-button:hover {
+  background-color: #ff3385;
+}
+
+/* Animation du bouton "Commencer" */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .thematique-container {
   display: flex;
   flex-direction: column;
@@ -57,6 +98,7 @@ body {
   position: relative;
   /* Positionner l'icône à gauche avec un écart de 10px du bord du bouton */
   /* Centrer le texte dans le bouton, même avec l'icône à gauche */
+  /* Positionnement du dic thème-score */
 }
 .theme-button .icon-container {
   position: absolute; /* Positionner l'icône absolument par rapport au bouton */
@@ -75,7 +117,17 @@ body {
 .theme-button.done {
   background-color: #555 !important;
   opacity: 0.6;
-  pointer-events: none; /* Désactive le bouton */
+}
+.theme-button .theme-score {
+  position: absolute;
+  right: 5px; /* À quelques pixels du bord du bouton */
+  top: 50%;
+  transform: translateY(-50%); /* Centrer verticalement */
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Légère opacité pour contraste */
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
 @media (max-width: 768px) {

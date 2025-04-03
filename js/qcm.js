@@ -58,7 +58,7 @@ function initializeQCMPage(theme) {
             } else {
                 clickedImage.classList.add('incorrect');
                 attempts++;
-                showMessage(`Faux, c'est ${name}`, 'red');
+                showMessage(`Faux, c'est ${name}`);
             }
 
             // Mise à jour du score dans localStorage à chaque tentative
