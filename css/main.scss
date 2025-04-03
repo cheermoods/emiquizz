@@ -5,7 +5,9 @@ $font-size-small: 16px;
 $font-size-medium: 18px;
 $font-size-large: 20px;
 
-// Styles globaux
+// ==========================
+// STYLES GLOBAUX
+// ==========================
 body {
   font-family: Arial, sans-serif;
   margin: 0 20px;
@@ -20,51 +22,9 @@ body {
   align-items: center; /* Centrage horizontal */
 }
 
-// Page d'accueil (index.html)
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
-}
-
-.image-center {
-  max-width: 75%;
-  height: auto;
-  margin-bottom: 50px;
-}
-
-.start-button {
-  padding: 20px 40px;
-  background-color: $rose-pimpant;
-  color: white;
-  font-size: $font-size-large;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  animation: bounce 2s infinite; /* Animation du bouton */
-  
-  &:hover {
-    background-color: $rose-clair;
-  }
-}
-
-/* Animation du bouton "Commencer" */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-// Page Thématique (thematique.html)
+// ==========================
+// STYLES POUR LA PAGE THEMATIQUE
+// ==========================
 .thematique-container {
   display: flex;
   flex-direction: column;
@@ -80,8 +40,6 @@ body {
   width: 400px;
   margin-bottom: 40px;
   cursor: pointer; /* Ajout du curseur pour indiquer que c'est cliquable */
-  top: 20px;
-  left: 50%; /* Centrer horizontalement */
 }
 
 // Conteneur des boutons thématiques
@@ -149,11 +107,12 @@ body {
   }
 }
 
-// =====================
+// ==========================
 // MEDIA QUERIES POUR RESPONSIVITÉ
-// =====================
+// ==========================
 
 @media (max-width: 768px) {
+  /* Version tablette */
   .themes-buttons-container {
     gap: 15px;
   }
@@ -165,7 +124,8 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  /* Version mobile */
   .themes-buttons-container {
     gap: 10px;
   }

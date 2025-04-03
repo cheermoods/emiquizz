@@ -1,21 +1,8 @@
 // Importation du fichier main.scss
 @import 'main'; // Importation du style global
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: flex-start; // Changer de 'center' à 'flex-start' pour éviter le centrage vertical
-  align-items: center; // Centrage horizontal
-}
+/* Styles spécifiques à la page QCM */
 
-/* Style pour la barre de navigation */
 .navbar {
   display: block;
   margin: 40px 0 0 0;
@@ -48,7 +35,7 @@ body {
 /* Conteneur des images en grid : Deux images par ligne */
 .qcm-image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Par défaut, 2 images par ligne */
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -57,22 +44,34 @@ body {
 
 /* Style des images dans le QCM */
 .qcm-image {
-  width: 600px;
+  width: 100%;
   height: 400px;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-  max-width: 100%;
   object-fit: cover;
 }
 
-/* Légère mise à l'échelle des images au survol */
+/* Effet de mise à l'échelle des images au survol */
 .qcm-image:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 
 .qcm-image.incorrect {
   opacity: 0.5;
+}
+
+/* Suppression de l'effet de mise à l'échelle des images sur tablette et mobile */
+@media (max-width: 768px) {
+  .qcm-image:hover {
+    transform: none; /* Désactive l'agrandissement des images sur tablette et mobile */
+  }
+
+  /* Affichage des images en une seule colonne sur tablette et mobile */
+  .qcm-image-grid {
+    grid-template-columns: 1fr; /* Une image par ligne */
+    gap: 20px;
+  }
 }
 
 /* Overlay pour la bonne réponse */
@@ -153,19 +152,5 @@ body {
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
-  font-weight: bold;
-}
-
-/* Positionner theme-score à droite du bouton thématique */
-.theme-button .theme-score {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 14px;
   font-weight: bold;
 }

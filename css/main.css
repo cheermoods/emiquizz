@@ -13,47 +13,6 @@ body {
   align-items: center; /* Centrage horizontal */
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
-}
-
-.image-center {
-  max-width: 75%;
-  height: auto;
-  margin-bottom: 50px;
-}
-
-.start-button {
-  padding: 20px 40px;
-  background-color: #FF007F;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  animation: bounce 2s infinite; /* Animation du bouton */
-}
-.start-button:hover {
-  background-color: #ff3385;
-}
-
-/* Animation du bouton "Commencer" */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 .thematique-container {
   display: flex;
   flex-direction: column;
@@ -68,8 +27,6 @@ body {
   width: 400px;
   margin-bottom: 40px;
   cursor: pointer; /* Ajout du curseur pour indiquer que c'est cliquable */
-  top: 20px;
-  left: 50%; /* Centrer horizontalement */
 }
 
 .themes-buttons-container {
@@ -131,6 +88,7 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Version tablette */
   .themes-buttons-container {
     gap: 15px;
   }
@@ -140,7 +98,8 @@ body {
     width: calc(50% - 10px); /* Les boutons occupent 50% de la largeur sur tablette */
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  /* Version mobile */
   .themes-buttons-container {
     gap: 10px;
   }
